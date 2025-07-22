@@ -1,14 +1,20 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:travelapp/gen/assets.gen.dart';
+import 'package:travelapp/common_libs.dart';
+import 'package:travelapp/features/presentation/controller/splash_controller.dart';
 
 class SplashView extends StatelessWidget {
-  const SplashView({super.key});
+  SplashView({super.key});
+  final _controller = Get.find<SplashController>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: SvgPicture.asset(Assets.icons.splashlogo)),
+      body: Center(
+        child: SvgPicture.asset(
+          Assets.icons.splashlogo,
+          height: MediaQuery.sizeOf(context).width * 0.8,
+          width: MediaQuery.sizeOf(context).width * 0.5,
+        ),
+      ),
     );
   }
 }
